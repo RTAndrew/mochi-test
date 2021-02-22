@@ -25,21 +25,8 @@ describe('useGoogleSignIn hook', () => {
     document.body.removeChild(DIV);
   });
 
-  it('it should return false if there is no button with the provided #id', async () => {
-    const { result, unmount, rerender } = await renderHook(() =>
-      useGoogleSignIn(UseGoogleSignInProps)
-    );
-
-    expect(document.getElementById(UseGoogleSignInProps.buttonId)?.id).toBe(
-      UseGoogleSignInProps.buttonId
-    );
-
-    await expect(result.current.loaded).toBe(true);
-    // expect(document.querySelectorAll('#google-signin-button').length).toBe(1);
-  });
-
   it('it should create a script element for the google script', () => {
-    const { result, unmount, rerender } = renderHook(() => useGoogleSignIn(UseGoogleSignInProps));
+    const { result } = renderHook(() => useGoogleSignIn(UseGoogleSignInProps));
     expect(document.querySelectorAll('script').length).toBe(1);
   });
 });

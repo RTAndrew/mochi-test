@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { fireEvent, screen } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
 
 import useClickOutsideListenerRef from './use-click-outside-listener-ref';
 
